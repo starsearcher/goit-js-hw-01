@@ -5,6 +5,5 @@ do {
     console.log(Number(input));
     total += Number(input);
     console.log(total);
-}
-while (input !== null);
+} while (input !== null);
 alert(`Общая сумма чисел равна ${total}`);

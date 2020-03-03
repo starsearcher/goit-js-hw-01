@@ -1,19 +1,35 @@
-const credits = 23580;
+let credits = 23580;
 console.log(`Счет ${credits}`);
 const pricePerDroid = 16;
 
 let droidQuantity = prompt("Сколько дроидов вы хотите купить?");
 console.log(`Дроиды в заказе ${droidQuantity}`);
+let totalPrice;
+let creditsLeft;
 
-let totalPrice = droidQuantity * pricePerDroid;
+droidQuantity = Number(droidQuantity);
 if (droidQuantity > 0) {
+    totalPrice = droidQuantity * pricePerDroid;
     console.log(`Сумма заказа ${totalPrice}`);
+} else if (droidQuantity <= 0) {
+    console.log(`Пользователь ввел неположительное значение`);
+    alert(`Введите положительное число!`);
+} else if (Number.isNaN(Number(droidQuantity))) {
+    console.log(`Пользователь ввел не число`);
+    alert(`Неверный ввод! Пожалуйста, переоформите заказ.`);
 } else if (droidQuantity === null) {
     console.log(`Отменено пользователем!`);
-} else { console.log(`Число невалидно`); }
+}
 
-let creditsLeft = credits - totalPrice;
-console.log(`Баланс по счету ${creditsLeft}`);
-if (creditsLeft < 0) {
+creditsLeft = credits - totalPrice;
+
+if (creditsLeft >= 0) {
+    alert(`Вы купили ${droidQuantity} дроидов, на счету осталось ${creditsLeft} кредитов`);
+    credits = creditsLeft;
+} else if (creditsLeft < 0) {
     console.log(`Недостаточно средств на счету!`);
-} else { alert(`Вы купили ${droidQuantity} дроидов, на счету осталось ${creditsLeft} кредитов`); }
+    alert(`Ваших средств недостаточно`);
+    credits = credits;
+}
+
+console.log(`Баланс по счету ${credits}`);

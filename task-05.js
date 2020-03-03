@@ -10,7 +10,7 @@ if (delivery === null) {
             break;
         case "чили":
             price = 250;
-            break;;
+            break;
         case "австралия":
             price = 170;
             break;
@@ -32,7 +32,9 @@ if (delivery === null) {
                 alert("Введите число");
             } else {
                 if (amount) {
-                    alert(`Доставка в ${delivery} будет стоить ${price * amount} кредитов`);
+                    alert(
+                        `Доставка в ${delivery} будет стоить ${price * amount} кредитов`
+                    );
                 }
                 break;
             }
