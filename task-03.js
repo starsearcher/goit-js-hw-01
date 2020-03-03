@@ -1,5 +1,5 @@
-const ADMIN_PASSWORD = "jqueryismyjam";
-let askPassword = prompt("Введите пароль");
+const ADMIN_PASSWORD = 'jqueryismyjam';
+let askPassword = prompt('Введите пароль');
 let message;
 if (askPassword === ADMIN_PASSWORD) {
     message = `Добро пожаловать!`;
